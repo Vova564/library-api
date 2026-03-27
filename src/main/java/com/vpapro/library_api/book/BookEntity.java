@@ -3,9 +3,7 @@ package com.vpapro.library_api.book;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -15,7 +13,9 @@ import java.time.LocalDateTime;
 @Table(name = "books")
 @Setter
 @Getter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class BookEntity {
     @Id
     @GeneratedValue
@@ -28,11 +28,13 @@ public class BookEntity {
             nullable = false)
     private String author;
 
-    @Column(nullable = false, length = 20)
+    @Column(length = 20,
+            nullable = false,
+            unique = true)
     private String isbn;
 
     @Column(nullable = false)
-    @Min(0)
+    @Min(1)
     private Integer totalCopies;
 
     @Column(nullable = false)

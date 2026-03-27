@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.vpapro.library_api.book.BookEntity;
 import com.vpapro.library_api.user.UserEntity;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -15,7 +13,9 @@ import java.time.LocalDateTime;
 @Table(name = "borrows")
 @Setter
 @Getter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class BorrowEntity {
     @Id
     @GeneratedValue
@@ -31,15 +31,18 @@ public class BorrowEntity {
                 nullable = false)
     private BookEntity book;
 
-    @Column(nullable = false)
     @CreationTimestamp
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    @Column(nullable = false)
     private LocalDateTime borrowDate;
 
-    @Column(nullable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    @Column(nullable = false)
     private LocalDateTime dueDate;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime returnDate;
+
+    @Version
+    private Integer version;
 }
