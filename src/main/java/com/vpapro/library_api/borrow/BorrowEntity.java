@@ -31,7 +31,6 @@ public class BorrowEntity {
                 nullable = false)
     private BookEntity book;
 
-    @CreationTimestamp
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @Column(nullable = false)
     private LocalDateTime borrowDate;
@@ -42,7 +41,4 @@ public class BorrowEntity {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime returnDate;
-
-    @Version
-    private Integer version;
 }
