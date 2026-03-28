@@ -1,5 +1,7 @@
 package com.vpapro.library_api.auth;
 
+import com.vpapro.library_api.user.UserEntity;
+import com.vpapro.library_api.user.UserMapper;
 import com.vpapro.library_api.user.dto.requests.CreateUserRequestDTO;
 import com.vpapro.library_api.auth.dto.requests.LoginRequestDTO;
 import com.vpapro.library_api.auth.dto.responses.LoginResponseDTO;
@@ -18,11 +20,13 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     private final UserService userService;
+    private final UserMapper userMapper;
     private final AuthenticationManager authenticationManager;
     private final JwtUtils jwtUtils;
 
     public UserResponseDTO register(final CreateUserRequestDTO createUserRequestDTO) {
-        return userService.createUser(createUserRequestDTO);
+        UserEntity user = userService.createUser(createUserRequestDTO);
+        return userMapper.mapFromUserEntityToUserResponseDTO(user);
     }
 
     public LoginResponseDTO login(final LoginRequestDTO loginRequestDTO) {
