@@ -19,14 +19,12 @@ public class UserService {
     private UserRepository userRepository;
     private UserMapper mapper;
 
-    public UserResponseDTO createUser(CreateUserRequestDTO createUserRequestDTO) {
+    public UserEntity createUser(final CreateUserRequestDTO createUserRequestDTO) {
         if (userRepository.existsByEmail((createUserRequestDTO.email()))) {
             throw new UserAlreadyExistException();
         }
 
-        UserEntity createdUser = userRepository.save(mapper.mapFromCreateUserRequestDTOToUserEntity(createUserRequestDTO));
-
-        return mapper.mapFromUserEntityToUserResponseDTO(createdUser);
+        return userRepository.save(mapper.mapFromCreateUserRequestDTOToUserEntity(createUserRequestDTO));
     }
 
     public UserEntity findCurrentUser(final Authentication authentication) {
@@ -74,7 +72,7 @@ public class UserService {
             userFromDatabase.setLastName(updateUserRequestDTO.lastName());
         }
 
-        return userFromDatabase;
+        return userRepository.save(userFromDatabase);
     }
 
     public void deleteUser(final Long id) {
