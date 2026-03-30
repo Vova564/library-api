@@ -44,7 +44,7 @@ public class BookService {
         }
 
         if (updateBookRequestDTO.totalCopies() != null) {
-            if (updateBookRequestDTO.totalCopies() >= bookFromDatabase.getAvailableCopies() && updateBookRequestDTO.totalCopies() > 0) {
+            if (updateBookRequestDTO.totalCopies() < bookFromDatabase.getAvailableCopies() || updateBookRequestDTO.totalCopies() <= 0) {
                 throw new AvailableCopiesExceedTotalException();
             }
             bookFromDatabase.setTotalCopies(updateBookRequestDTO.totalCopies());
