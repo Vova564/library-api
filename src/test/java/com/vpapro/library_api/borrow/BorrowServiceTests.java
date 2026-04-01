@@ -4,7 +4,6 @@ import com.vpapro.library_api.book.BookEntity;
 import com.vpapro.library_api.book.BookService;
 import com.vpapro.library_api.exceptions.AvailableCopiesExceedTotalException;
 import com.vpapro.library_api.exceptions.BookIsNotAvailableException;
-import com.vpapro.library_api.exceptions.BookNotFoundException;
 import com.vpapro.library_api.exceptions.BorrowNotFoundException;
 import com.vpapro.library_api.user.UserEntity;
 import com.vpapro.library_api.user.UserService;

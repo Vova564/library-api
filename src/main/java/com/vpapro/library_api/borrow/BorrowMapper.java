@@ -3,10 +3,7 @@ package com.vpapro.library_api.borrow;
 import com.vpapro.library_api.book.BookMapper;
 import com.vpapro.library_api.borrow.dto.responses.BorrowResponseDTO;
 import com.vpapro.library_api.borrow.dto.responses.GetAllBorrowsResponseDTO;
-import com.vpapro.library_api.user.UserEntity;
 import com.vpapro.library_api.user.UserMapper;
-import com.vpapro.library_api.user.dto.responses.GetAllUsersResponseDTO;
-import com.vpapro.library_api.user.dto.responses.UserResponseDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

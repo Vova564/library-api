@@ -5,7 +5,6 @@ import com.vpapro.library_api.book.BookEntity;
 import com.vpapro.library_api.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
