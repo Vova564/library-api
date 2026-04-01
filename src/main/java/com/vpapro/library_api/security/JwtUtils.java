@@ -2,6 +2,7 @@ package com.vpapro.library_api.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.security.SignatureException;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,11 +43,12 @@ public class JwtUtils {
                 .getPayload()
                 .getSubject();
     }
+
     public boolean validateJwtToken(String token) {
         try {
             Jwts.parser().verifyWith(key).build().parseSignedClaims(token);
             return true;
-        } catch (SecurityException e) {
+        } catch (SignatureException e) {
             log.warn("Invalid JWT signature: {}", e.getMessage());
         } catch (MalformedJwtException e) {
             log.warn("Invalid JWT token: {}", e.getMessage());
