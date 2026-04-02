@@ -4,7 +4,6 @@ import com.vpapro.library_api.exceptions.UserAlreadyExistException;
 import com.vpapro.library_api.user.dto.requests.CreateUserRequestDTO;
 import com.vpapro.library_api.exceptions.UserNotFoundException;
 import com.vpapro.library_api.user.dto.requests.UpdateUserRequestDTO;
-import com.vpapro.library_api.user.dto.responses.UserResponseDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
