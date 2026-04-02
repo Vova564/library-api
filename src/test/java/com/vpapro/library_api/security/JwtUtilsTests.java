@@ -18,7 +18,7 @@ class JwtUtilsTests {
     }
 
     @Test
-    void getUserFromToken_when_return() {
+    void getUserFromToken_whenTokenIsValid_returnsEmail() {
         String token = jwtUtils.generateToken("test@test.com");
 
         String result = jwtUtils.getUserFromToken(token);
