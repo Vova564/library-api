@@ -12,5 +12,18 @@ services:
     volumes:
       - postgres_db_data:/var/lib/postgresql/data
 
+  backend:
+    build: .
+    container_name: library-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/library_database
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: admin
+
 volumes:
   postgres_db_data:
