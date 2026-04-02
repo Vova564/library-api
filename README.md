@@ -3,15 +3,6 @@
 REST API do zarządzania biblioteką — użytkownikami, książkami i wypożyczeniami.
 Projekt napisany jako aplikacja portfolio prezentująca typowy backend produkcyjny.
 
-## Tech stack
-
-- Java 21, Spring Boot 4.0
-- Spring Security + JWT
-- PostgreSQL, Spring Data JPA
-- Argon2 (własna implementacja password encodera)
-- Docker, Docker Compose
-- JUnit 5, Mockito, AssertJ
-
 ## Uruchomienie
 
 ### Wymagania
