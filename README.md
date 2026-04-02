@@ -12,6 +12,8 @@ Projekt napisany jako aplikacja portfolio prezentująca typowy backend produkcyj
 
 1. Sklonuj repozytorium
 2. Zbuduj i uruchom wszystkie kontenery (backend jest konteryzowany wraz z bazą)
+* docker-compose up -d  (w folderze projektu)
+* lub odpalić plik docker-compose.yml w Intellij
 
 Aplikacja startuje na http://localhost:8080  
 Baza danych PostgreSQL działa na porcie 54421
