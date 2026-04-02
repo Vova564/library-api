@@ -20,7 +20,7 @@ Projekt napisany jako aplikacja portfolio prezentująca typowy backend produkcyj
 ### Kroki
 
 1. Sklonuj repozytorium
-2. Zbuduj i uruchom wszystkie kontenery (backend jest konteryzowany z bazą)
+2. Zbuduj i uruchom wszystkie kontenery (backend jest konteryzowany wraz z bazą)
 
 Aplikacja startuje na http://localhost:8080  
 Baza danych PostgreSQL działa na porcie 54421
@@ -31,6 +31,12 @@ API używa JWT. Aby korzystać z chronionych endpointów:
 1. Zarejestruj użytkownika: POST /auth/register
 2. Zaloguj się: POST /auth/login — otrzymasz token
 3. Dodaj nagłówek do kolejnych requestów: Authorization: Bearer <token>
+
+## Inicjalizacja konta admina
+W bazie automatycznie tworzony jest użytkownik z rolą admin:
+
+* login: admin@example.com
+* hasło: Haslo12345#
 
 ## Endpointy
 
