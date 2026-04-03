@@ -367,14 +367,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/users/:id",
+              "raw": "http://localhost:8080/books/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
-                "users",
+                "books",
                 ":id"
               ],
               "variable": [
@@ -412,14 +412,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/users",
+              "raw": "http://localhost:8080/books",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
-                "users"
+                "books"
               ]
             }
           },
@@ -486,14 +486,14 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/users/:id",
+              "raw": "http://localhost:8080/books/:id",
               "protocol": "http",
               "host": [
                 "localhost"
               ],
               "port": "8080",
               "path": [
-                "users",
+                "books",
                 ":id"
               ],
               "variable": [
