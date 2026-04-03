@@ -33,19 +33,25 @@ W bazie automatycznie tworzony jest użytkownik z rolą admin:
 
 ## Endpointy
 
-| Metoda | Endpoint              | Opis                          | Rola       |
-|--------|-----------------------|-------------------------------|------------|
-| POST   | /auth/register        | Rejestracja użytkownika       | Publiczny  |
-| POST   | /auth/login           | Logowanie, zwraca JWT         | Publiczny  |
-| GET    | /users/me             | Dane zalogowanego użytkownika | USER       |
-| PATCH  | /users/me             | Edycja własnych danych        | USER       |
-| DELETE | /users/me             | Usunięcie konta               | USER       |
-| GET    | /books                | Lista wszystkich książek      | USER       |
-| POST   | /books                | Dodanie książki               | ADMIN      |
-| PATCH  | /books/{id}           | Edycja książki                | ADMIN      |
-| DELETE | /books/{id}           | Usunięcie książki             | ADMIN      |
-| POST   | /borrows/{bookId}     | Wypożyczenie książki          | USER       |
-| PATCH  | /borrows/{bookId}/return | Zwrot książki              | USER       |
-| GET    | /borrows/me           | Moje wypożyczenia             | USER       |
+| Metoda | Endpoint                 | Opis                                    | Rola      |
+|--------|--------------------------|-----------------------------------------|-----------|
+| POST   | /auth/register           | Rejestracja użytkownika                 | Publiczny |
+| POST   | /auth/login              | Logowanie, zwraca JWT                   | Publiczny |
+| GET    | /users/me                | Dane zalogowanego użytkownika           | USER      |
+| PATCH  | /users/me                | Edycja własnych danych                  | USER      |
+| DELETE | /users/me                | Usunięcie konta                         | USER      |
+| GET    | /users                   | Dane wszystkich użytkowników            | ADMIN     |
+| PATCH  | /users/{id}              | Edycja danych konkretnego użytkownika   | ADMIN     |
+| DELETE | /users/{id}              | Usunięcie konta konkretnego użytkownika | ADMIN     |
+| GET    | /books                   | Lista wszystkich książek                | USER      |
+| GET    | /books/{id}              | Informacja konkretnej książki           | USER      |
+| POST   | /books                   | Dodanie książki                         | ADMIN     |
+| PATCH  | /books/{id}              | Edycja książki                          | ADMIN     |
+| DELETE | /books/{id}              | Usunięcie książki                       | ADMIN     |
+| POST   | /borrows/{bookId}        | Wypożyczenie książki                    | USER      |
+| PATCH  | /borrows/{bookId}/return | Zwrot książki                           | USER      |
+| GET    | /borrows/me              | Moje wypożyczenia                       | USER      |
+| GET    | /borrows                 | Wszystkie wypożyczenia                  | ADMIN     |
+| GET    | /borrows/{userId}        | Wypożyczenia konkretnego użetkownika    | ADMIN     |
 
-Pełna kolekcja Postman: `Library.postman_collection.json`
+Pełna kolekcja Postman znajduje sięw pliku: `Library.postman_collection.json`
