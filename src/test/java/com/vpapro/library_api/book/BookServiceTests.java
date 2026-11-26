@@ -19,7 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class BookServiceTest {
+class BookServiceTests {
 
     @Mock
     private BookRepository bookRepository;
@@ -87,6 +87,7 @@ class BookServiceTest {
         UpdateBookRequestDTO dto = new UpdateBookRequestDTO("New Book", "New Author", 10);
 
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.save(book)).thenReturn(book);
 
         BookEntity result = bookService.updateBook(1L, dto);
 
@@ -100,6 +101,7 @@ class BookServiceTest {
         UpdateBookRequestDTO dto = new UpdateBookRequestDTO("New Book", null, null);
 
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.save(book)).thenReturn(book);
 
         BookEntity result = bookService.updateBook(1L, dto);
 
@@ -113,6 +115,7 @@ class BookServiceTest {
         UpdateBookRequestDTO dto = new UpdateBookRequestDTO(null, "New Author", null);
 
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.save(book)).thenReturn(book);
 
         BookEntity result = bookService.updateBook(1L, dto);
 
@@ -126,6 +129,7 @@ class BookServiceTest {
         UpdateBookRequestDTO dto = new UpdateBookRequestDTO(null, null, 10);
 
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.save(book)).thenReturn(book);
 
         BookEntity result = bookService.updateBook(1L, dto);
 
@@ -139,6 +143,7 @@ class BookServiceTest {
         UpdateBookRequestDTO dto = new UpdateBookRequestDTO(null, null, null);
 
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.save(book)).thenReturn(book);
 
         BookEntity result = bookService.updateBook(1L, dto);
 
