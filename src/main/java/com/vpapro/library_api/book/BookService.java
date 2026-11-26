@@ -50,7 +50,7 @@ public class BookService {
             bookFromDatabase.setTotalCopies(updateBookRequestDTO.totalCopies());
         }
 
-        return bookFromDatabase;
+        return bookRepository.save(bookFromDatabase);
     }
 
     public void deleteBook(final Long id) {
